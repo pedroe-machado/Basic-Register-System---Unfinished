@@ -72,13 +72,12 @@ int binRecursiva(int vetor[], int inicio, int fim, int buscado) {
 
 }
 
-void apaga(registro vetor[], int pos){
-
-    
-} //marca id negativo 
+void apaga(registro vetor[], int pos){ //marca id negativo 
+    vetor[pos].ID = (-1)*vetor[pos].ID;
+}
 
 void imprime(registro vetor[], int pos, int n){ //loop de couts a partir da posicao dada
-
+   
     for(int i=pos; i<n; i++){
         cout << vetor[i].ID << " "
         << vetor[i].descritor << " "
