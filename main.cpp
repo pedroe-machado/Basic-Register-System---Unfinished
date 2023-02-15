@@ -45,18 +45,13 @@ void quickSort(int vetor[], int pos_pivo, int fim) {
 
 void ordena(int opcao){ //quicksort
 
-    switch (opcao)
+    switch (opcao){
 
-    {
-    case 0:
-
-        break;
-    
-    case 1:
+    case 0: //ordena por ID
 
         break;
     
-    case 2:
+    case 1: //ordena por preço de venda
 
         break;
     
@@ -64,18 +59,38 @@ void ordena(int opcao){ //quicksort
 
         break;
     }
-};
+}
 
-int busca(){ //binaria
+int binRecursiva(int vetor[], int inicio, int fim, int buscado) {     
+    
+    if (inicio <= fim){
+        int meio = (inicio+fim)/2;
+        if (buscado > vetor[meio]) return binRecursiva(vetor,meio+1,fim,buscado);
+        else if (buscado < vetor[meio]) return binRecursiva(vetor,inicio,meio-1,buscado);
+        else return meio;
+    } return -1;
+
+}
+
+void apaga(registro vetor[], int pos){
+
+    
+} //marca id negativo 
+
+void imprime(registro vetor[], int pos, int n){ //loop de couts a partir da posicao dada
+
+    for(int i=pos; i<n; i++){
+        cout << vetor[i].ID << " "
+        << vetor[i].descritor << " "
+        << vetor[i].certificado << " "
+        << vetor[i].precoCompra << " "
+        << vetor[i].precoVenda << ";" << endl;
+    }
+}
+
+void insere(registro novo){
 
 
-    return pos;
-};
-
-void apaga(int pos){}; //marca id negativo 
-
-void imprime(int pos, int n){}; //loop de couts a partir da posicao dada
-
-void insere(registro novo){}; //ordenado
+} //ordenado
 
 
