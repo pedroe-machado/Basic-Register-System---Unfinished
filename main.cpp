@@ -109,8 +109,8 @@ int binRecursivaID(registro vetor[], int inicio, int fim, int buscado) {
     
     if (inicio <= fim){
         int meio = (inicio+fim)/2;
-        if (buscado > vetor[meio].ID) return binRecursiva(vetor,meio+1,fim,buscado);
-        else if (buscado < vetor[meio].ID) return binRecursiva(vetor,inicio,meio-1,buscado);
+        if (buscado > vetor[meio].ID) return binRecursivaID(vetor,meio+1,fim,buscado);
+        else if (buscado < vetor[meio].ID) return binRecursivaID(vetor,inicio,meio-1,buscado);
         else return meio;
     } return -1;
 
