@@ -8,15 +8,6 @@
 #include <stdio.h>
 
 using namespace std;
-struct registro {
-
-    int ID;
-    string descritor;
-    string certificado;
-    float precoCompra;
-    float precoVenda;
-
-};
 
 int Converte() { //converte o arquivo em binario
     std::ifstream infile("base8.csv"); // Abrir o arquivo CSV
@@ -38,7 +29,28 @@ int Converte() { //converte o arquivo em binario
     outfile.close(); // Fechar o arquivo binário
     return 0;
 }
+struct registro {
 
+    int ID;
+    string descritor;
+    string certificado;
+    float precoCompra;
+    float precoVenda;
+
+};
+
+int menu(){		// Criado um menu onde o usuário escolhe uma opcao numerica.
+    int opc;
+    cout << "- - - - - - - -  MENU  - - - - - - - - -" << endl << endl;
+    cout << " [ 1 ] -  Cadastrar " << endl;
+    cout << " [ 2 ] -  Listar " << endl;
+    cout << " [ 3 ] -  Pesquisar um item " << endl;
+    cout << " [ 5 ] -  Excluir " << endl;
+    cout << " [ 6 ] -  Sair " << endl << endl;
+    cout << "Digite sua opcao: ";
+    cin >> opc;
+    return opc;
+}
 
 void swap(registro vetor[],int pos1, int pos2){
     registro aux = vetor[pos1];
@@ -92,19 +104,6 @@ void quickSortprecoVenda (registro vetor[], int pospivo, int fim){
     }
 }
 
-int menu(){		// Criado um menu onde o usuário escolhe uma opcao numerica.
-    int opc;
-    cout << "- - - - - - - -  MENU  - - - - - - - - -" << endl << endl;
-    cout << " [ 1 ] -  Cadastrar " << endl;
-    cout << " [ 2 ] -  Listar " << endl;
-    cout << " [ 3 ] -  Pesquisar um item " << endl;
-    cout << " [ 5 ] -  Excluir " << endl;
-    cout << " [ 6 ] -  Sair " << endl << endl;
-    cout << "Digite sua opcao: ";
-    cin >> opc;
-    return opc;
-}
-
 int binRecursivaID(registro vetor[], int inicio, int fim, int buscado) {     
     
     if (inicio <= fim){
@@ -116,10 +115,15 @@ int binRecursivaID(registro vetor[], int inicio, int fim, int buscado) {
 
 }
 
-int buscaDescritor(registro vetor[], string buscado) {     
-    
-    while()
-
+int buscaDescritor(registro vetor[], int tam, string buscado) {     
+    int i=0;
+    bool cond=false;
+    while(i<tam && !cond){
+        if(vetor[i].descritor == buscado){
+            cond=true;
+            return i;
+        }
+    }
 }
 
 
@@ -143,3 +147,10 @@ void insere(registro novo){
 
 
 } //ordenado
+
+int main(){
+
+
+
+    return 0;
+};
